@@ -1,39 +1,40 @@
 # AutoTest_RF
-DFS（Dynamic Frequency Selection，動態頻率選擇）是一種無線通訊技術，主要應用於Wi-Fi 5（802.11ac）和Wi-Fi 6（802.11ax）標準中的 **5GHz 頻段**。DFS 允許無線網路設備在特定頻段內動態調整頻道，以避免干擾雷達系統或其他受保護的通訊設備。
+DFS (Dynamic Frequency Selection) is a wireless communication technology primarily used in **5GHz bands** within Wi-Fi 5 (802.11ac) and Wi-Fi 6 (802.11ax) standards.  
+It allows wireless devices to dynamically adjust channels within certain frequency ranges to avoid interfering with radar systems or other protected communication equipment.
 
-## **DFS 頻道的主要特點**
-1. **避免雷達干擾**：  
-   - 在某些國家，5GHz 頻段的一部分與天氣雷達、軍用雷達等共用。  
-   - DFS 可監測雷達訊號並在必要時自動切換頻道，確保不影響這些關鍵系統。
+## **Key Features of DFS Channels**
+1. **Radar Interference Avoidance**:  
+   - In some countries, parts of the 5GHz band are shared with weather radar, military radar, and other systems.  
+   - DFS monitors radar signals and automatically switches channels when necessary, ensuring critical systems are not affected.  
 
-2. **擴展 Wi-Fi 頻道範圍**：  
-   - 非DFS頻道（如 36、40、44、48）可直接使用，但數量有限。  
-   - DFS 啟用後，額外的頻道（如 52–64 和 100–144）可供使用，減少擁擠情況，提高網路效能。
+2. **Extended Wi-Fi Channel Range**:  
+   - Non-DFS channels (e.g., 36, 40, 44, 48) are always available but limited in number.  
+   - Enabling DFS opens additional channels (e.g., 52–64 and 100–144), reducing congestion and improving network performance.  
 
-3. **動態頻道切換機制**：  
-   - 路由器或 AP（Access Point）在啟用 DFS 頻道前，會先 **靜默監測（CAC, Channel Availability Check）** 60 秒至 10 分鐘，以確保頻道沒有雷達訊號。  
-   - 如果運行中偵測到雷達，Wi-Fi 會在 **10 秒內切換到其他頻道**，用戶可能會感受到短暫的網路中斷。
+3. **Dynamic Channel Switching Mechanism**:  
+   - Before enabling a DFS channel, the router or AP (Access Point) performs a **Channel Availability Check (CAC)**, which can last from 60 seconds up to 10 minutes, ensuring no radar signals are present.  
+   - If radar is detected during operation, Wi-Fi will **switch to another channel within 10 seconds**, potentially causing a brief network interruption.  
 
-## **DFS 頻道的優缺點**
-| 優點 | 缺點 |
+## **Pros and Cons of DFS Channels**
+| Pros | Cons |
 |------|------|
-| 增加 5GHz 可用頻道數量，減少擁擠 | 路由器需要較長時間來切換或啟動 DFS 頻道 |
-| 減少與其他 Wi-Fi 設備的干擾 | 有些裝置（如舊版智慧家電、遊戲機）不支援 DFS 頻道 |
-| 提高無線網路穩定性和速度 | 雷達干擾可能導致頻道變更，影響連線穩定性 |
+| Expands available 5GHz channels, reducing congestion | Routers take longer to switch or start DFS channels |
+| Reduces interference from other Wi-Fi devices | Some devices (older smart appliances, game consoles) may not support DFS |
+| Improves Wi-Fi stability and performance | Radar interference may force channel changes, impacting stability |
 
-## **哪些設備支援 DFS？**
-- **大部分高端 Wi-Fi 5 / Wi-Fi 6 路由器** 支援 DFS 頻道，但可能需要手動開啟設定。
-- **筆記型電腦、手機**（如支援 Wi-Fi 6 的設備）大多能連接 DFS 頻道，但部分裝置（如舊版 IoT 設備）可能無法連線。
+## **Which Devices Support DFS?**
+- **Most high-end Wi-Fi 5 / Wi-Fi 6 routers** support DFS, but settings may need to be enabled manually.  
+- **Laptops and smartphones** (with Wi-Fi 6 support) generally connect to DFS channels, but some **older IoT devices may not**.  
 
-## **如何查看或設定 DFS 頻道？**
-1. 進入路由器的管理介面（通常是 `192.168.1.1`）。
-2. 找到 **Wi-Fi 頻道設定**，選擇 5GHz 頻段。
-3. 若路由器支援 DFS，可手動選擇 DFS 頻道（如 52, 100, 116 等）。
-4. 儲存設定後，可能需要等待一段時間（CAC檢查），然後 Wi-Fi 會開始使用該頻道。
+## **How to Check or Configure DFS Channels**
+1. Log in to your router’s admin interface (usually `192.168.1.1`).  
+2. Find **Wi-Fi channel settings** and select the 5GHz band.  
+3. If supported, choose a DFS channel (e.g., 52, 100, 116).  
+4. Save settings. The router may require CAC time before the channel becomes active.  
 
-## **DFS 頻道適合誰使用？**
-- **住在高密度公寓或辦公室環境**，需要避開 5GHz 擁擠頻道的人。
-- **使用 Wi-Fi 6（802.11ax）路由器**，想要最佳化連線品質的人。
-- **不受頻道切換影響的用戶**，如下載、串流等需求較高，但即時遊戲可能會受影響。
+## **Who Should Use DFS Channels?**
+- **Users in high-density apartments or office environments**, where 5GHz channels are crowded.  
+- **Wi-Fi 6 router owners**, aiming to optimize connection quality.  
+- **Users not sensitive to brief disconnections**, such as for downloads or streaming (real-time gaming may be affected).  
 
-如果你的 Wi-Fi 經常受到干擾或 5GHz 頻道擁擠，啟用 DFS 可能會提升連線品質！
+If your Wi-Fi often suffers from interference or congestion on the 5GHz band, enabling DFS could significantly improve connection quality!
